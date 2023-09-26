@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="itemList">
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="borderImageCart">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="avatarPersonalDetails">
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="toastFail">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">@color/white</item>
+        <item name="stFont">@font/poppins_bold</item>
+        <item name="stTextSize">12sp</item>
+        <item name="stColorBackground">@color/toastRed</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stRadius">5dp</item>
+    </style>
+
+    <style name="toastWarning">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">@color/white</item>
+        <item name="stFont">@font/poppins_bold</item>
+        <item name="stTextSize">12sp</item>
+        <item name="stColorBackground">@color/rate</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stRadius">5dp</item>
+    </style>
+
+    <style name="toastSuccess">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">@color/white</item>
+        <item name="stFont">@font/poppins_bold</item>
+        <item name="stTextSize">12sp</item>
+        <item name="stColorBackground">@color/toastGreen</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stRadius">5dp</item>
+    </style>
+</resources>

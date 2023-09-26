@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="customer"
+            type="com.example.ecommerce_mobile_app.model.Customer" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LayoutImageProfileDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.widget.Button
+                android:id="@+id/btnCancelImage"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/custom_btn_category_store_unclick"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btnUploadImage"
+                app:layout_constraintTop_toBottomOf="@+id/shapeableImageView6" />
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/icon_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView6"
+                setImage="@{customer.photoImagePath}"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="44dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/avatarPersonalDetails" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btnUpdateImageProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="100dp"
+                android:background="@color/white"
+                android:elevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.59"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/borderImageCart"
+                app:srcCompat="@drawable/icon_image_upload" />
+
+            <android.widget.Button
+                android:id="@+id/btnUploadImage"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_btn_primary"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shapeableImageView6"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LayoutEditProfileDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutImageProfileDetail">
+
+            <android.widget.Button
+                android:id="@+id/btnEditSaveProfileDetail"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/custom_btn_primary"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutPhoneNumber" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayoutPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutEmail">
+
+                <TextView
+                    android:id="@+id/tvPhoneNumberProfileDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Phone Number"
+                    android:textColor="#acacac"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etPhoneNumberProfileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Phone Number"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@{customer.phoneNumber}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvPhoneNumberProfileDetail"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayoutFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvFirstNameProfileDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="First Name"
+                    android:textColor="#acacac"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etFirstNameProfileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@{customer.firstName}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvFirstNameProfileDetail"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayoutLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutFirstName">
+
+                <TextView
+                    android:id="@+id/tvLastNameProfileDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Last Name"
+                    android:textColor="#acacac"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etLastNameProfileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@{customer.lastName}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLastNameProfileDetail"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayoutUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutLastName">
+
+                <TextView
+                    android:id="@+id/tvAddressProfileDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Address"
+                    android:textColor="#acacac"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etAddressProfileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Address"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@{customer.address}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvAddressProfileDetail"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutUserName">
+
+                <TextView
+                    android:id="@+id/tvEmailProfileDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Email"
+                    android:textColor="#acacac"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etEmailProfileDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Email"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@{customer.email}"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvEmailProfileDetail"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <android.widget.Button
+                android:id="@+id/btnCancel"
+                android:visibility="gone"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/custom_btn_category_store_unclick"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnEditSaveProfileDetail"
+                app:layout_constraintTop_toBottomOf="@+id/LayoutPhoneNumber" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

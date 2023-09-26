@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Shop mee</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="currency"> $</string>
+    <string name="dotName">...</string>
+    <string name="dotDescription">:</string>
+    <string name="changepassMail">We have send you an One Time Password(OTP) on this mail:\n</string>
+</resources>
