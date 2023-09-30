@@ -43,10 +43,9 @@ public class PrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("LogedCustomer");
         editor.apply();
-        removeToken();
     }
 
-    private void removeToken(){
+    public void removeToken(){
         SharedPreferences sharedPreferences = context.getSharedPreferences("Token", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("jwt");

@@ -102,6 +102,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
                     enableEditting(address);
                     enableEditting(email);
                     enableEditting(phoneNumber);
+                    activityPersonalDetailsBinding.btnUpdateImageProfile.setVisibility(View.GONE);
                 }
                 else{
 
@@ -113,6 +114,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
                     dto.setFullname(firstName.getText().toString() + " " + lastName.getText().toString());
                     dto.setEmail(email.getText().toString());
                     dto.setPhoneNumber(phoneNumber.getText().toString());
+                    activityPersonalDetailsBinding.btnUpdateImageProfile.setVisibility(View.VISIBLE);
 
                     updateProfile(dto);
                 }
@@ -130,6 +132,8 @@ public class CustomerDetailActivity extends AppCompatActivity {
                 disableEditting(address);
                 disableEditting(email);
                 disableEditting(phoneNumber);
+
+                activityPersonalDetailsBinding.btnUpdateImageProfile.setVisibility(View.VISIBLE);
             }
         });
         activityPersonalDetailsBinding.btnUpdateImageProfile.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +142,8 @@ public class CustomerDetailActivity extends AppCompatActivity {
                     CheckPermission();
                     cancel_upload.setVisibility(View.VISIBLE);
                     save_upload.setVisibility(View.VISIBLE);
+
+                    edit_save.setVisibility(View.GONE);
             }
         });
         cancel_upload.setOnClickListener(new View.OnClickListener() {
@@ -146,12 +152,16 @@ public class CustomerDetailActivity extends AppCompatActivity {
                 cancel_upload.setVisibility(View.GONE);
                 save_upload.setVisibility(View.GONE);
                 MainActivity.setImage(avatar,customer.getPhotoImagePath());
+
+                edit_save.setVisibility(View.VISIBLE);
             }
         });
 
         save_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                edit_save.setVisibility(View.VISIBLE);
+
                 uploadImage();
             }
         });
@@ -218,7 +228,6 @@ public class CustomerDetailActivity extends AppCompatActivity {
                         customer.setEmail(dto.getEmail());
                         customer.setPhoneNumber(dto.getPhoneNumber());
                         prefManager.changeCustomer(customer);
-                        prefManager.saveToken(response.body().getToken());
                 }
                 else {
                     CustomToast.showFailMessage(getApplicationContext(),"Update profile is failure. Please try again!");

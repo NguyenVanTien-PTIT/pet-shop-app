@@ -176,7 +176,7 @@ public interface APIService {
     Call<List<CartItem>> getOrderDetail(@Query("id") int orderId,
                                          @Header("Authorization") String authHeader);
 
-    @PUT("/user")
+    @PUT("/user/mobile")
     Call<LoginResponse> updateCustomer(@Body Customer customer,
                                        @Header("Authorization") String authHeader);
 

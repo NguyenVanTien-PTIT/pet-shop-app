@@ -44,7 +44,11 @@ public class ProfileFragment extends Fragment {
         fragmentProfileBinding.btnLogoutProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new PrefManager(getContext()).removeCustomer();
+                PrefManager prefManager = new PrefManager(getContext());
+
+                prefManager.removeCustomer();
+                prefManager.removeToken();
+
                 Intent intent = new Intent(getContext(), SignInActivity.class);
                 startActivity(intent);
                 getActivity().finish();
